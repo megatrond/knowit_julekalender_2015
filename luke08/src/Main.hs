@@ -7,7 +7,7 @@ isPrime :: Int -> Bool
 isPrime k = null [ x | x <- [2..iSqrt k], k `mod`x  == 0]
 
 iReverse :: Int -> Int
-iReverse i = read (reverse (show i))
+iReverse = read . reverse . show
 
 mirps :: Int -> Int
 mirps i = length [ x | x <- [0..i], (isPrime x && isPrime (iReverse x) && x /= (iReverse x) ) ]
